@@ -1,0 +1,611 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Nórdico / Nordic Plan - Vitalidad 40+</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, h4, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+        }
+        @keyframes pulse-custom {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.02); }
+        }
+        .animate-pulse-custom {
+            animation: pulse-custom 2s infinite ease-in-out;
+        }
+        .text-gradient-gold {
+            background: linear-gradient(to bottom right, #fcd34d, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4"
+  }
+}
+</script>
+</head>
+<body class="bg-[#fafaf9] text-[#292524] antialiased">
+
+    <!-- Top Countdown Bar -->
+    <div class="bg-red-700 py-3 px-4 sticky top-0 z-[60] shadow-lg border-b border-red-800">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-center gap-2 md:gap-8">
+            <p id="top-bar-text" class="text-white font-black text-xs md:text-sm uppercase tracking-[0.2em] text-center">
+                ¡OFERTA ESPECIAL TERMINA EN!
+            </p>
+            <div class="flex gap-3 justify-center items-center font-black text-yellow-300 timer-display">
+                <!-- Timer injection -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="relative w-full z-50 glass-effect border-b border-emerald-200 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <span class="font-serif text-2xl font-black tracking-tight text-emerald-950">
+                    <span id="logo-text">Plan Nórdico</span><span class="text-red-600">.</span>
+                </span>
+            </div>
+            <button onclick="toggleLanguage()" id="lang-toggle" class="px-5 py-2 rounded-full border-2 border-emerald-900 text-xs font-black hover:bg-emerald-900 hover:text-white transition-all uppercase tracking-widest text-emerald-950">
+                English
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative overflow-hidden pt-12 pb-20 md:pt-24 md:pb-32 bg-emerald-950">
+            <div class="absolute inset-0 z-0 opacity-30 pointer-events-none">
+                <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-400 rounded-full blur-[150px]"></div>
+                <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-red-900/20 rounded-full blur-[150px]"></div>
+            </div>
+            <div class="max-w-6xl mx-auto px-4 relative z-10">
+                <div class="flex flex-col md:flex-row items-center gap-16">
+                    <div class="w-full md:w-3/5 text-center md:text-left">
+                        <span id="hero-badge" class="inline-block px-4 py-1.5 mb-6 text-xs font-black tracking-[0.3em] uppercase bg-red-600 text-white rounded-full shadow-lg">
+                            Vitalidad Respaldada por la Ciencia
+                        </span>
+                        <h1 id="hero-title" class="text-5xl md:text-8xl font-[900] leading-[0.95] mb-8 tracking-tighter text-gradient-gold filter drop-shadow-[0_4px_4px_rgba(0,0,0,0.3)]">
+                            Recupera tu Energía con la Filosofía Nórdica
+                        </h1>
+                        <p id="hero-subtitle" class="text-xl md:text-2xl text-emerald-50 mb-10 leading-relaxed font-medium opacity-90 max-w-2xl text-justify">
+                            Un sistema suave pero efectivo diseñado para mujeres mayores de 40 años para optimizar el metabolismo, proteger las articulaciones y volver a sentirse vibrante—sin dietas extremas.
+                        </p>
+                        <div id="hero-bullets" class="flex flex-col gap-5 mb-12 items-center md:items-start text-white">
+                            <!-- Bullets injection -->
+                        </div>
+                        <a href="https://pay.hotmart.com/C104080238R?bid=1769388590011" class="cta-link inline-block w-full md:w-auto px-12 py-6 bg-red-600 text-yellow-300 text-2xl font-black rounded-full shadow-[0_20px_50px_rgba(220,38,38,0.6)] hover:bg-red-700 transition-all text-center transform hover:scale-[1.05] ring-8 ring-white/10 uppercase tracking-widest">
+                            Inicia tu Plan Nórdico Hoy
+                        </a>
+                    </div>
+                    <div class="w-full md:w-2/5 relative">
+                        <div class="aspect-[4/5] rounded-[60px] overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.5)] border-8 border-white/10 transform rotate-2">
+                            <img src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&q=80&w=1000" alt="Nordic Wellness" class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute -bottom-10 -left-10 bg-amber-400 p-8 rounded-[40px] shadow-2xl max-w-[220px] border-4 border-white transform -rotate-3 hidden md:block">
+                            <p id="floating-badge" class="text-lg font-black text-emerald-950 leading-tight">Protocolo Especial Mujer 40+</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Badges -->
+        <section class="py-10 border-y-4 border-emerald-900 bg-emerald-950 text-emerald-400">
+            <div class="max-w-6xl mx-auto px-4 flex flex-wrap justify-center md:justify-between items-center gap-10">
+                <span class="text-sm font-black tracking-[0.3em] uppercase">European Standard</span>
+                <span class="text-sm font-black tracking-[0.3em] uppercase text-red-500">Science First</span>
+                <span class="text-sm font-black tracking-[0.3em] uppercase">Bio-Available</span>
+                <span class="text-sm font-black tracking-[0.3em] uppercase text-amber-400">Expert Tested</span>
+            </div>
+        </section>
+
+        <!-- Science Section -->
+        <section class="py-24 bg-white">
+            <div class="max-w-4xl mx-auto px-4 text-center mb-16">
+                <h2 id="hormonal-title" class="text-4xl md:text-6xl font-black mb-8 text-emerald-950">La Ciencia del Cambio Después de los 40</h2>
+                <p id="hormonal-subtitle" class="text-xl text-stone-600 leading-relaxed font-medium">Tu cuerpo no está trabajando en tu contra—simplemente está cambiando. Los métodos convencionales suelen fallar porque ignoran el cambio hormonal único.</p>
+            </div>
+            <div id="hormonal-points" class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Science points injection -->
+            </div>
+        </section>
+
+        <!-- Product Breakdown -->
+        <section class="py-24 bg-emerald-950 text-emerald-50 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-red-600 via-amber-400 to-red-600"></div>
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="text-center mb-24">
+                    <h2 id="product-title" class="text-4xl md:text-7xl font-black mb-8 tracking-tighter">Qué Incluye Tu Plan</h2>
+                    <p id="product-subtitle" class="text-2xl font-medium opacity-70 italic">Un ecosistema digital completo construido para tu etapa de vida.</p>
+                </div>
+                <div id="product-items" class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <!-- Product items injection -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="py-24 bg-emerald-50">
+            <div class="max-w-6xl mx-auto px-4">
+                <h2 id="benefits-title" class="text-4xl md:text-6xl font-black text-center mb-24 text-emerald-950">Resultados Reales y Sostenibles</h2>
+                <div id="benefits-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                    <!-- Benefits injection -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="py-24 bg-emerald-900 text-white overflow-hidden">
+            <div class="max-w-6xl mx-auto px-4">
+                <h2 id="testimonials-title" class="text-4xl md:text-6xl font-[900] text-center mb-24 tracking-tight">Historias de la Comunidad Nórdica</h2>
+                <div id="testimonials-items" class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <!-- Testimonials injection -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Bonus Section -->
+        <section class="py-24 bg-white relative">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="rounded-[80px] p-10 md:p-24 border-[6px] border-red-600 relative bg-emerald-50/20 overflow-hidden shadow-2xl">
+                    <div class="absolute -top-7 left-1/2 -translate-x-1/2 px-10 py-4 bg-red-600 text-white rounded-full text-sm font-black tracking-[0.4em] uppercase shadow-2xl z-30 ring-8 ring-white">
+                        <span id="bonus-badge">Bono Limitado</span>
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-20 items-center relative z-10">
+                        <div class="w-full md:w-1/2 text-center md:text-left">
+                            <h2 id="bonus-title" class="text-4xl md:text-7xl font-black mb-10 text-emerald-950 tracking-tighter">Protocolo Mañanero Nórdico</h2>
+                            <p id="bonus-desc" class="text-2xl text-stone-600 mb-12 font-medium leading-relaxed">Obtén nuestro ritual exclusivo de 10 minutos para activar el metabolismo y preparar tu día para el éxito.</p>
+                            <ul id="bonus-items" class="space-y-6 mb-16 inline-block md:block">
+                                <!-- Bonus points injection -->
+                            </ul>
+                            <div class="bg-amber-100 border-l-8 border-amber-500 p-6 mb-12 rounded-r-3xl">
+                                <p id="bonus-limit" class="text-amber-900 font-black uppercase text-lg tracking-widest">🔥 Disponible para los primeros 50 compradores de hoy</p>
+                            </div>
+                            <a href="https://pay.hotmart.com/C104080238R?bid=1769388590011" class="cta-link inline-block w-full px-12 py-7 bg-red-600 text-yellow-300 text-3xl font-black rounded-full text-center hover:bg-red-700 transition-all shadow-xl transform hover:-translate-y-2 uppercase tracking-widest">
+                                <span id="bonus-cta">Asegurar Mi Bono Ahora</span>
+                            </a>
+                        </div>
+                        <div class="w-full md:w-1/2">
+                            <div class="aspect-square bg-white rounded-[60px] shadow-2xl flex items-center justify-center p-16 border-4 border-emerald-100 transform -rotate-2">
+                                <div class="w-full h-full border-[12px] border-emerald-950 rounded-[40px] bg-emerald-50 relative overflow-hidden flex flex-col justify-end p-12">
+                                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=500" class="absolute inset-0 w-full h-full object-cover opacity-40">
+                                    <div class="relative z-10">
+                                        <h4 id="bonus-img-title" class="text-4xl font-serif font-black text-emerald-950">Protocolo Mañanero Nórdico</h4>
+                                        <div class="w-32 h-3 bg-red-600 mt-6 rounded-full"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Buy Box & Guarantee -->
+        <section id="cta-section" class="py-24 bg-white">
+            <div class="max-w-4xl mx-auto px-4 text-center">
+                <div class="flex justify-center mb-16">
+                    <div class="w-40 h-40 rounded-[3rem] bg-emerald-50 flex items-center justify-center shadow-2xl border-4 border-emerald-100 transform rotate-12">
+                        <svg class="w-20 h-20 text-emerald-900" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                </div>
+                <h2 id="guarantee-title" class="text-4xl md:text-8xl font-black mb-10 text-emerald-950 tracking-tighter leading-none">La Promesa Nórdica de 30 Días</h2>
+                <p id="guarantee-desc" class="text-2xl text-stone-600 mb-16 leading-relaxed max-w-2xl mx-auto font-medium">Prueba el Plan Nórdico sin riesgos. Si no sientes un cambio en tu energía o movilidad en 30 días, te devolveremos el dinero. Sin preguntas.</p>
+                
+                <div class="bg-white p-12 md:p-20 rounded-[80px] shadow-[0_100px_150px_rgba(6,78,59,0.2)] border-4 border-emerald-50 max-w-2xl mx-auto mb-16 relative overflow-visible">
+                    <div class="absolute top-0 right-0 p-4 translate-x-1/4 -translate-y-1/3 z-20">
+                        <div class="w-48 h-48 bg-red-600 text-white rounded-full flex flex-col items-center justify-center rotate-12 shadow-2xl border-[10px] border-white">
+                            <span id="price-badge-top" class="text-xs font-black uppercase tracking-widest mb-1">Oferta Especial</span>
+                            <div class="flex flex-col items-center">
+                                <span class="text-xl font-black line-through opacity-60">$37</span>
+                                <span class="text-6xl font-[950] leading-none mb-1 text-yellow-300">$8</span>
+                            </div>
+                            <span id="price-badge-bottom" class="text-xs opacity-90 font-black tracking-widest">PRIMEROS 50</span>
+                        </div>
+                    </div>
+                    
+                    <h3 id="buybox-title" class="text-3xl md:text-4xl font-[900] mb-8 text-emerald-950 uppercase tracking-[0.2em]">Acceso Vitalicio</h3>
+                    
+                    <div class="bg-emerald-50 rounded-3xl py-6 px-4 mb-10 border-2 border-emerald-100">
+                        <p id="timer-label" class="text-emerald-900 font-black text-xs uppercase tracking-widest mb-3">TIEMPO RESTANTE PARA EL PRECIO DE $8:</p>
+                        <div class="flex gap-3 justify-center items-center font-black text-emerald-950 timer-display">
+                            <!-- Timer injection -->
+                        </div>
+                    </div>
+
+                    <ul id="buybox-list" class="text-left space-y-6 mb-12">
+                        <!-- List injection -->
+                    </ul>
+                    
+                    <a href="https://pay.hotmart.com/C104080238R?bid=1769388590011" class="cta-link inline-block w-full max-w-sm mx-auto py-5 bg-red-600 text-yellow-300 text-xl font-black rounded-full hover:bg-red-700 transition-all shadow-2xl transform active:scale-95 ring-[8px] ring-red-50 uppercase tracking-widest text-center">
+                        <span id="buybox-cta">Inicia tu Plan Nórdico Hoy</span>
+                    </a>
+                </div>
+                <p id="guarantee-badge" class="text-red-600 font-black text-2xl italic mb-24 tracking-[0.3em] uppercase animate-pulse-custom">30 Días de Garantía</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-24 bg-emerald-950 text-emerald-50 border-t-8 border-red-600">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="font-serif text-4xl font-[900] mb-12 tracking-tighter text-amber-400">
+                <span id="footer-logo">Plan Nórdico</span><span class="text-red-600">.</span>
+            </p>
+            <div class="flex flex-wrap justify-center gap-12 mb-16 text-sm font-black uppercase tracking-[0.4em] text-emerald-400">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+                <a href="#">Contact Support</a>
+            </div>
+            <p id="footer-rights" class="text-sm opacity-30 mb-8 font-bold tracking-widest">© 2024 Plan Nórdico. Todos los derechos reservados.</p>
+            <div class="h-0.5 w-24 bg-red-600 mx-auto mb-8"></div>
+            <p id="footer-disclaimer" class="text-xs opacity-40 max-w-2xl mx-auto leading-relaxed italic font-medium">
+                Descargo de responsabilidad: Este producto no está destinado a diagnosticar, tratar, curar o prevenir ninguna enfermedad. Los resultados pueden variar.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Mobile Sticky CTA -->
+    <div class="md:hidden fixed bottom-0 left-0 w-full p-4 z-[100] bg-white/90 backdrop-blur-xl border-t-4 border-red-600 shadow-2xl">
+        <a href="https://pay.hotmart.com/C104080238R?bid=1769388590011" class="cta-link block w-full py-5 bg-red-600 text-yellow-300 text-xl font-black rounded-full text-center shadow-2xl active:scale-95 transition-all uppercase tracking-widest">
+            <span id="mobile-cta">Inicia tu Plan Nórdico Hoy</span>
+        </a>
+    </div>
+
+    <script>
+        let currentLang = 'es';
+        const hotmartLinks = {
+            es: 'https://pay.hotmart.com/C104080238R?bid=1769388590011',
+            en: 'https://pay.hotmart.com/L104099320L'
+        };
+
+        const translations = {
+            en: {
+                topBar: "SPECIAL OFFER ENDS IN!",
+                logo: "Nordic Plan",
+                langBtn: "Español",
+                hero: {
+                    badge: "Science-Backed Vitality",
+                    title: "Reclaim Your Energy with the Nordic Philosophy",
+                    subtitle: "A gentle yet effective system designed for women 40+ to optimize metabolism, protect joints, and feel vibrant again—no extreme diets required.",
+                    bullets: ["Metabolic restoration (40-67)", "Joint-friendly protocols", "Hormonal balance nutrition", "Sustainable approach"],
+                    cta: "Start Your Nordic Plan Today"
+                },
+                hormonal: {
+                    title: "The Science of Change After 40",
+                    subtitle: "Your body isn't working against you—it's just changing. Conventional methods fail because they ignore the unique shift in hormones.",
+                    points: [
+                        {title: "Metabolic Slowdown", desc: "Hormonal shifts impact insulin sensitivity. We prioritize nutrient density to stabilize daily energy, avoiding restrictive diets that lead to chronic fatigue."},
+                        {title: "Joint Integrity", desc: "As we age, collagen production decreases. Our protocols lubricate joints and build core stability safely, without harmful high-impact stress."},
+                        {title: "Cortisol Management", desc: "Chronic stress triggers signals that store stubborn abdominal fat. We implement Nordic techniques to burn fat in an efficient and natural way."}
+                    ]
+                },
+                product: {
+                    title: "What's Inside Your Plan",
+                    subtitle: "A comprehensive digital ecosystem built for your stage of life.",
+                    items: [
+                        {title: "Foundation Guide", desc: "12-week roadmap explaining the 'why' behind the Nordic approach."},
+                        {title: "Movement Library", desc: "Follow-along videos focusing on resistance and flexibility."},
+                        {title: "Seasonal Menu", desc: "Delicious, anti-inflammatory recipes that simplify meal planning."},
+                        {title: "Metabolic Tracker", desc: "Simple tools to monitor your progress and energy levels."}
+                    ]
+                },
+                benefits: {
+                    title: "Real Outcomes, Sustainable Results",
+                    list: [
+                        {icon: "Energy", title: "Wake up Refreshed", desc: "Stable energy levels throughout the afternoon without the crash."},
+                        {icon: "Mobility", title: "Pain-Free Movement", desc: "Reduced inflammation and increased joint lubrication for easier walking."},
+                        {icon: "Confidence", title: "Clothing Confidence", desc: "Feel comfortable in your favorite pieces as your body finds its balance."},
+                        {icon: "Clarity", title: "Mental Sharpness", desc: "Support brain health and reduce 'brain fog' through targeted nutrition."}
+                    ]
+                },
+                testimonials: {
+                    title: "Stories from the Community",
+                    items: [
+                        {name: "Elena", age: "54", text: "I finally found something that doesn't feel like a chore. My knees feel better than they did in my 30s."},
+                        {name: "Margaret", age: "62", text: "The recipes are delicious and simple. I have so much more energy for my grandkids now."},
+                        {name: "Sofia", age: "48", text: "Scientific, professional, and actually works. The focus on hormones changed everything for me."}
+                    ]
+                },
+                bonus: {
+                    badge: "Limited Bonus",
+                    title: "The Nordic Morning Protocol",
+                    desc: "Get our exclusive 10-minute ritual to boost metabolism and set your day for success.",
+                    items: ["Metabolism ritual", "Anti-inflammatory tonic", "Mental clarity exercises"],
+                    limit: "🔥 Available for the first 50 buyers today",
+                    cta: "Secure My Bonus Now"
+                },
+                guarantee: {
+                    title: "The 30-Day Nordic Promise",
+                    desc: "Try the Plan Nórdico risk-free. If you don't feel a shift in your energy within 30 days, we'll provide a full refund.",
+                    badge: "30-Day Money Back"
+                },
+                buybox: {
+                    title: "Lifetime Access",
+                    timer: "TIME REMAINING FOR $8 PRICE:",
+                    badgeTop: "Special Offer",
+                    badgeBottom: "FIRST 50"
+                },
+                footer: {
+                    rights: "© 2024 Nordic Plan. All Rights Reserved.",
+                    disclaimer: "Disclaimer: This product is not intended to diagnose, treat, cure, or prevent any disease. Results may vary."
+                }
+            },
+            es: {
+                topBar: "¡OFERTA ESPECIAL TERMINA EN!",
+                logo: "Plan Nórdico",
+                langBtn: "English",
+                hero: {
+                    badge: "Vitalidad Respaldada por la Ciencia",
+                    title: "Recupera tu Energía con la Filosofía Nórdica",
+                    subtitle: "Un sistema suave pero efectivo diseñado para mujeres mayores de 40 años para optimizar el metabolismo, proteger las articulaciones y volver a sentirse vibrante—sin dietas extremas.",
+                    bullets: ["Restauración metabólica (40-67)", "Movimiento sin dolor", "Equilibrio hormonal", "Enfoque sostenible"],
+                    cta: "Inicia tu Plan Nórdico Hoy"
+                },
+                hormonal: {
+                    title: "La Ciencia del Cambio Después de los 40",
+                    subtitle: "Tu cuerpo no está trabajando en tu contra—simplemente está cambiando. Los métodos convencionales suelen fallar porque ignoran el cambio hormonal único.",
+                    points: [
+                        {title: "Ralentización Metabólica", desc: "Los cambios en el estrógeno afectan la sensibilidad a la insulina. Priorizamos la densidad de nutrientes para estabilizar la energía, evitando fatiga crónica."},
+                        {title: "Integridad Articular", desc: "Con los años, el colágeno disminuye. Nuestros protocolos lubrican articulaciones y fortalecen la musculatura de forma segura y libre de impacto."},
+                        {title: "Gestión del Cortisol", desc: "El estrés activa señales de almacenamiento de grasa abdominal. Aplicamos técnicas nórdicas para quemar grasa de manera natural y eficiente."}
+                    ]
+                },
+                product: {
+                    title: "Qué Incluye Tu Plan",
+                    subtitle: "Un ecosistema digital completo construido para tu etapa de vida.",
+                    items: [
+                        {title: "Guía de Fundamentos", desc: "Hoja de ruta de 12 semanas que explica el 'por qué' del enfoque nórdico."},
+                        {title: "Biblioteca de Movimiento", desc: "Videos guiados enfocados en resistencia de bajo impacto y flexibilidad."},
+                        {title: "El Menú Estacional", desc: "Recetas deliciosas y antiinflamatorias que simplifican tus comidas."},
+                        {title: "Rastreador Metabólico", desc: "Herramientas sencillas para monitorear tu progreso y energía."}
+                    ]
+                },
+                benefits: {
+                    title: "Resultados Reales y Sostenibles",
+                    list: [
+                        {icon: "Energy", title: "Despierta Renovada", desc: "Niveles de energía estables durante toda la tarde sin el típico bajón."},
+                        {icon: "Mobility", title: "Movimiento Sin Dolor", desc: "Inflamación reducida y mayor lubricación articular para caminar con facilidad."},
+                        {icon: "Confidence", title: "Confianza al Vestir", desc: "Siéntete cómoda con tus prendas favoritas mientras tu cuerpo se equilibra."},
+                        {icon: "Clarity", title: "Claridad Mental", desc: "Apoya la salud cerebral y reduce la niebla mental mediante nutrición dirigida."}
+                    ]
+                },
+                testimonials: {
+                    title: "Historias de la Comunidad Nórdica",
+                    items: [
+                        {name: "Elena", age: "54", text: "Finalmente encontré algo que no se siente como una obligación. Mis rodillas se sienten mejor que a mis 30."},
+                        {name: "Margarita", age: "62", text: "Las recetas son deliciosas y sencillas. Ahora tengo mucha más energía para mis nietos."},
+                        {name: "Sofía", age: "48", text: "Científico, profesional y realmente funciona. El enfoque en las hormonas lo cambió todo."}
+                    ]
+                },
+                bonus: {
+                    badge: "Bono Limitado",
+                    title: "Protocolo Mañanero Nórdico",
+                    desc: "Obtén nuestro ritual exclusivo de 10 minutos para activar el metabolismo y preparar tu día para el éxito.",
+                    items: ["Ritual metabólico", "Tónico antiinflamatorio", "Ejercicios mentales"],
+                    limit: "🔥 Disponible para los primeros 50 compradores de hoy",
+                    cta: "Asegurar Mi Bono Ahora"
+                },
+                guarantee: {
+                    title: "La Promesa Nórdica de 30 Días",
+                    desc: "Prueba el Plan Nórdico sin riesgos. Si no sientes un cambio en tu energía o movilidad en 30 días, te devolvemos el dinero.",
+                    badge: "30 Días de Garantía"
+                },
+                buybox: {
+                    title: "Acceso Vitalicio",
+                    timer: "TIEMPO RESTANTE PARA EL PRECIO DE $8:",
+                    badgeTop: "Oferta Especial",
+                    badgeBottom: "PRIMEROS 50"
+                },
+                footer: {
+                    rights: "© 2024 Plan Nórdico. Todos los derechos reservados.",
+                    disclaimer: "Descargo de responsabilidad: Este producto no está destinado a diagnosticar, tratar, curar o prevenir ninguna enfermedad. Los resultados pueden variar."
+                }
+            }
+        };
+
+        // Countdown logic
+        let timeLeft = { days: 1, hours: 23, minutes: 59, seconds: 59 };
+        function updateTimer() {
+            if (timeLeft.seconds > 0) timeLeft.seconds--;
+            else if (timeLeft.minutes > 0) { timeLeft.minutes--; timeLeft.seconds = 59; }
+            else if (timeLeft.hours > 0) { timeLeft.hours--; timeLeft.minutes = 59; timeLeft.seconds = 59; }
+            else if (timeLeft.days > 0) { timeLeft.days--; timeLeft.hours = 23; timeLeft.minutes = 59; timeLeft.seconds = 59; }
+            
+            const displays = document.querySelectorAll('.timer-display');
+            displays.forEach(display => {
+                display.innerHTML = `
+                    <div class="flex flex-col items-center">
+                        <span class="text-2xl md:text-3xl leading-none">${timeLeft.days}</span>
+                        <span class="text-[10px] uppercase tracking-tighter opacity-70">${currentLang === 'es' ? 'Días' : 'Days'}</span>
+                    </div>
+                    <span class="text-xl pb-3">:</span>
+                    <div class="flex flex-col items-center">
+                        <span class="text-2xl md:text-3xl leading-none">${String(timeLeft.hours).padStart(2, '0')}</span>
+                        <span class="text-[10px] uppercase tracking-tighter opacity-70">Hrs</span>
+                    </div>
+                    <span class="text-xl pb-3">:</span>
+                    <div class="flex flex-col items-center">
+                        <span class="text-2xl md:text-3xl leading-none">${String(timeLeft.minutes).padStart(2, '0')}</span>
+                        <span class="text-[10px] uppercase tracking-tighter opacity-70">Min</span>
+                    </div>
+                    <span class="text-xl pb-3">:</span>
+                    <div class="flex flex-col items-center">
+                        <span class="text-2xl md:text-3xl leading-none">${String(timeLeft.seconds).padStart(2, '0')}</span>
+                        <span class="text-[10px] uppercase tracking-tighter opacity-70">${currentLang === 'es' ? 'Seg' : 'Sec'}</span>
+                    </div>
+                `;
+            });
+        }
+        setInterval(updateTimer, 1000);
+        updateTimer();
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'es' ? 'en' : 'es';
+            render();
+        }
+
+        function render() {
+            const t = translations[currentLang];
+            
+            // Text nodes
+            document.getElementById('top-bar-text').innerText = t.topBar;
+            document.getElementById('logo-text').innerText = t.logo;
+            document.getElementById('lang-toggle').innerText = t.langBtn;
+            document.getElementById('hero-badge').innerText = t.hero.badge;
+            document.getElementById('hero-title').innerText = t.hero.title;
+            document.getElementById('hero-subtitle').innerText = t.hero.subtitle;
+            document.getElementById('floating-badge').innerText = currentLang === 'es' ? 'Protocolo Especial Mujer 40+' : 'Special Protocol Women 40+';
+            
+            document.getElementById('hormonal-title').innerText = t.hormonal.title;
+            document.getElementById('hormonal-subtitle').innerText = t.hormonal.subtitle;
+            
+            document.getElementById('product-title').innerText = t.product.title;
+            document.getElementById('product-subtitle').innerText = t.product.subtitle;
+            
+            document.getElementById('benefits-title').innerText = t.benefits.title;
+            document.getElementById('testimonials-title').innerText = t.testimonials.title;
+            
+            document.getElementById('bonus-badge').innerText = t.bonus.badge;
+            document.getElementById('bonus-title').innerText = t.bonus.title;
+            document.getElementById('bonus-desc').innerText = t.bonus.desc;
+            document.getElementById('bonus-limit').innerText = t.bonus.limit;
+            document.getElementById('bonus-cta').innerText = t.bonus.cta;
+            document.getElementById('bonus-img-title').innerText = t.bonus.title;
+            
+            document.getElementById('guarantee-title').innerText = t.guarantee.title;
+            document.getElementById('guarantee-desc').innerText = t.guarantee.desc;
+            document.getElementById('guarantee-badge').innerText = t.guarantee.badge;
+            
+            document.getElementById('buybox-title').innerText = t.buybox.title;
+            document.getElementById('timer-label').innerText = t.buybox.timer;
+            document.getElementById('buybox-cta').innerText = t.hero.cta;
+            document.getElementById('mobile-cta').innerText = t.hero.cta;
+            document.getElementById('price-badge-top').innerText = t.buybox.badgeTop;
+            document.getElementById('price-badge-bottom').innerText = t.buybox.badgeBottom;
+            
+            document.getElementById('footer-logo').innerText = t.logo;
+            document.getElementById('footer-rights').innerText = t.footer.rights;
+            document.getElementById('footer-disclaimer').innerText = t.footer.disclaimer;
+
+            // Hotmart links
+            const ctaLinks = document.querySelectorAll('.cta-link');
+            ctaLinks.forEach(link => {
+                link.href = hotmartLinks[currentLang];
+                if (link.tagName === 'A' && !link.innerText) {
+                     // do nothing for empty anchors
+                }
+            });
+
+            // Dynamic injections
+            document.getElementById('hero-bullets').innerHTML = t.hero.bullets.map(b => `
+                <div class="flex items-center gap-4">
+                    <div class="bg-red-600 rounded-full p-1 shadow-md">
+                        <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    </div>
+                    <span class="font-bold text-lg md:text-xl tracking-tight">${b}</span>
+                </div>
+            `).join('');
+
+            document.getElementById('hormonal-points').innerHTML = t.hormonal.points.map(p => `
+                <div class="p-12 rounded-[50px] bg-emerald-50 border-2 border-emerald-100 hover:border-red-600 transition-all group relative overflow-hidden flex flex-col h-full">
+                    <div class="w-16 h-16 bg-red-600 text-white rounded-[20px] flex items-center justify-center mb-8 shadow-xl transform group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-7.714 2.143L11 21l-2.286-6.857L1 12l7.714-2.143L11 3z" /></svg>
+                    </div>
+                    <h3 class="text-3xl font-black mb-6 text-emerald-900">${p.title}</h3>
+                    <p class="text-stone-700 leading-relaxed text-lg font-medium text-justify flex-grow">${p.desc}</p>
+                </div>
+            `).join('');
+
+            document.getElementById('product-items').innerHTML = t.product.items.map((it, i) => `
+                <div class="flex gap-10 p-12 rounded-[60px] bg-white/5 border border-white/10 hover:bg-white/10 transition-all group">
+                    <div class="flex-shrink-0 w-14 h-14 rounded-2xl bg-amber-400 text-emerald-950 flex items-center justify-center font-black text-2xl shadow-2xl transform group-hover:-rotate-6 transition-transform">${i + 1}</div>
+                    <div>
+                        <h3 class="text-3xl font-black mb-4 text-white">${it.title}</h3>
+                        <p class="opacity-70 leading-relaxed text-xl">${it.desc}</p>
+                    </div>
+                </div>
+            `).join('');
+
+            const iconMap = {
+                Energy: '<svg class="w-10 h-10 text-emerald-950" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" /></svg>',
+                Mobility: '<svg class="w-10 h-10 text-emerald-950" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="5" r="3" /><path d="M6.5 9h11M10 14v7M14 14v7M12 9v5" /></svg>',
+                Confidence: '<svg class="w-10 h-10 text-emerald-950" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>',
+                Clarity: '<svg class="w-10 h-10 text-emerald-950" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" /><polyline points="3.27 6.96 12 12.01 20.73 6.96" /><line x1="12" y1="22.08" x2="12" y2="12" /></svg>'
+            };
+
+            document.getElementById('benefits-list').innerHTML = t.benefits.list.map(b => `
+                <div class="text-center group p-8 rounded-[40px] hover:bg-white hover:shadow-2xl transition-all duration-500 border-2 border-transparent hover:border-emerald-100">
+                    <div class="relative w-28 h-28 mx-auto mb-10">
+                        <div class="absolute inset-0 bg-amber-400 rounded-full blur-2xl opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                        <div class="relative w-full h-full bg-white rounded-[2.5rem] flex items-center justify-center shadow-xl border-4 border-emerald-50 transform group-hover:-translate-y-2 group-hover:rotate-6 transition-transform">
+                            ${iconMap[b.icon]}
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-black mb-5 text-emerald-900 leading-tight">${b.title}</h3>
+                    <p class="text-stone-700 text-lg leading-relaxed font-medium">${b.desc}</p>
+                </div>
+            `).join('');
+
+            document.getElementById('testimonials-items').innerHTML = t.testimonials.items.map(item => `
+                <div class="bg-emerald-950 p-12 rounded-[60px] border-2 border-emerald-800 flex flex-col shadow-2xl h-full">
+                    <div class="flex gap-1.5 mb-8">
+                        ${[1,2,3,4,5].map(() => '<svg class="w-6 h-6 text-amber-400 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>').join('')}
+                    </div>
+                    <p class="text-2xl italic mb-10 leading-relaxed font-serif opacity-90">"${item.text}"</p>
+                    <div class="flex items-center gap-5 mt-auto">
+                        <div class="w-14 h-14 rounded-full bg-red-600 border-4 border-emerald-800 shadow-lg flex items-center justify-center font-black text-xl">${item.name[0]}</div>
+                        <div>
+                            <p class="font-black text-xl">${item.name}</p>
+                            <p class="text-sm opacity-60 uppercase tracking-widest font-bold">${item.age} ${currentLang === 'es' ? 'años' : 'years'}</p>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            document.getElementById('bonus-items').innerHTML = t.bonus.items.map(b => `
+                <li class="flex items-center gap-5">
+                    <div class="w-8 h-8 rounded-xl bg-red-600 flex items-center justify-center shadow-lg">
+                        <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    </div>
+                    <span class="text-emerald-950 font-black text-xl tracking-tight">${b}</span>
+                </li>
+            `).join('');
+
+            document.getElementById('buybox-list').innerHTML = t.product.items.map(it => `
+                <li class="flex items-start gap-5 group">
+                    <div class="mt-1 bg-red-600 rounded-lg p-1 shadow-md transform group-hover:scale-110 transition-transform">
+                        <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    </div>
+                    <span class="text-emerald-950 font-black text-xl tracking-tight leading-tight">${it.title}</span>
+                </li>
+            `).join('');
+
+            updateTimer();
+        }
+
+        render();
+    </script>
+</body>
+</html>
