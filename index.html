@@ -37,14 +37,15 @@
 <script type="importmap">
 {
   "imports": {
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "react": "https://esm.sh/react@^19.2.4"
+    "react": "https://esm.sh/react@^19.2.4",
+    "react/": "https://esm.sh/react@^19.2.4/"
   }
 }
 </script>
 </head>
 <body class="bg-[#fafaf9] text-[#292524] antialiased">
+    <!-- Needed to prevent React mounting errors in this environment -->
+    <div id="root"></div>
 
     <!-- Top Countdown Bar -->
     <div class="bg-red-700 py-3 px-4 sticky top-0 z-[60] shadow-lg border-b border-red-800">
@@ -360,7 +361,7 @@
                     badge: "Vitalidad Respaldada por la Ciencia",
                     title: "Recupera tu Energía con la Filosofía Nórdica",
                     subtitle: "Un sistema suave pero efectivo diseñado para mujeres mayores de 40 años para optimizar el metabolismo, proteger las articulaciones y volver a sentirse vibrante—sin dietas extremas.",
-                    bullets: ["Restauración metabólica (40-67)", "Movimiento sin dolor", "Equilibrio hormonal", "Enfoque sostenible"],
+                    bullets: [\"Restauración metabólica (40-67)\", \"Movimiento sin dolor\", \"Equilibrio hormonal\", \"Enfoque sostenible\"],
                     cta: "Inicia tu Plan Nórdico Hoy"
                 },
                 hormonal: {
@@ -403,13 +404,13 @@
                     badge: "Bono Limitado",
                     title: "Protocolo Mañanero Nórdico",
                     desc: "Obtén nuestro ritual exclusivo de 10 minutos para activar el metabolismo y preparar tu día para el éxito.",
-                    items: ["Ritual metabólico", "Tónico antiinflamatorio", "Ejercicios mentales"],
+                    items: [\"Ritual metabólico\", \"Tónico antiinflamatorio\", \"Ejercicios mentales\"],
                     limit: "🔥 Disponible para los primeros 50 compradores de hoy",
                     cta: "Asegurar Mi Bono Ahora"
                 },
                 guarantee: {
                     title: "La Promesa Nórdica de 30 Días",
-                    desc: "Prueba el Plan Nórdico sin riesgos. Si no sientes un cambio en tu energía o movilidad en 30 días, te devolvemos el dinero.",
+                    desc: "Prueba el Plan Nórdico sin riesgos. Si no sientes un cambio en tu energía o movilidad en 30 días, te devolveremos el dinero.",
                     badge: "30 Días de Garantía"
                 },
                 buybox: {
