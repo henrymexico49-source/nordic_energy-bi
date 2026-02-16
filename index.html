@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -32,6 +31,14 @@
             background: linear-gradient(to bottom right, #fcd34d, #fbbf24, #f59e0b);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+        /* Custom scrollbar hiding for the testimonial carousel */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
     </style>
 <script type="importmap">
@@ -86,11 +93,11 @@
                         <span id="hero-badge" class="inline-block px-4 py-1.5 mb-6 text-xs font-black tracking-[0.3em] uppercase bg-red-600 text-white rounded-full shadow-lg">
                             Vitalidad Respaldada por la Ciencia
                         </span>
-                        <h1 id="hero-title" class="text-5xl md:text-8xl font-[900] leading-[0.95] mb-8 tracking-tighter text-gradient-gold filter drop-shadow-[0_4px_4px_rgba(0,0,0,0.3)]">
-                            Recupera tu Energía con la Filosofía Nórdica
+                        <h1 id="hero-title" class="leading-tight mb-8 tracking-tighter">
+                            <!-- Injected via JS -->
                         </h1>
                         <p id="hero-subtitle" class="text-xl md:text-2xl text-emerald-50 mb-10 leading-relaxed font-medium opacity-90 max-w-2xl text-justify">
-                            Un sistema suave pero efectivo diseñado para mujeres mayores de 40 años para optimizar el metabolismo, proteger las articulaciones y volver a sentirse vibrante—sin dietas extremas.
+                            <!-- Injected via JS -->
                         </p>
                         <div id="hero-bullets" class="flex flex-col gap-5 mb-12 items-center md:items-start text-white">
                             <!-- Bullets injection -->
@@ -111,13 +118,10 @@
             </div>
         </section>
 
-        <!-- Trust Badges -->
-        <section class="py-10 border-y-4 border-emerald-900 bg-emerald-950 text-emerald-400">
-            <div class="max-w-6xl mx-auto px-4 flex flex-wrap justify-center md:justify-between items-center gap-10">
-                <span class="text-sm font-black tracking-[0.3em] uppercase">European Standard</span>
-                <span class="text-sm font-black tracking-[0.3em] uppercase text-red-500">Science First</span>
-                <span class="text-sm font-black tracking-[0.3em] uppercase">Bio-Available</span>
-                <span class="text-sm font-black tracking-[0.3em] uppercase text-amber-400">Expert Tested</span>
+        <!-- Highlights Bar - Updated with Colors and Left Alignment -->
+        <section class="py-10 border-y-4 border-emerald-900 bg-emerald-950 text-emerald-50">
+            <div id="highlights-container" class="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-6 gap-x-4">
+                <!-- Highlights injection -->
             </div>
         </section>
 
@@ -156,12 +160,21 @@
             </div>
         </section>
 
-        <!-- Testimonials -->
-        <section class="py-24 bg-emerald-900 text-white overflow-hidden">
+        <!-- Testimonials Carousel/Grid -->
+        <section class="py-24 bg-emerald-900 text-white overflow-hidden relative">
             <div class="max-w-6xl mx-auto px-4">
                 <h2 id="testimonials-title" class="text-4xl md:text-6xl font-[900] text-center mb-24 tracking-tight">Historias de la Comunidad Nórdica</h2>
-                <div id="testimonials-items" class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                
+                <!-- On mobile, this becomes a snap-scroll carousel. On desktop, it remains a grid. -->
+                <div id="testimonials-items" class="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-12 md:pb-0 md:grid md:grid-cols-3 md:gap-10 no-scrollbar">
                     <!-- Testimonials injection -->
+                </div>
+
+                <!-- Carousel scroll cues for mobile -->
+                <div class="flex md:hidden justify-center gap-2 mt-4 opacity-50">
+                    <div class="w-10 h-1 bg-white rounded-full"></div>
+                    <div class="w-2 h-1 bg-white/30 rounded-full"></div>
+                    <div class="w-2 h-1 bg-white/30 rounded-full"></div>
                 </div>
             </div>
         </section>
@@ -288,11 +301,17 @@
                 langBtn: "Español",
                 hero: {
                     badge: "Science-Backed Vitality",
-                    title: "Reclaim Your Energy with the Nordic Philosophy",
-                    subtitle: "A gentle yet effective system designed for women 40+ to optimize metabolism, protect joints, and feel vibrant again—no extreme diets required.",
+                    title: "<span class='text-yellow-400 text-4xl md:text-6xl lg:text-7xl block mb-3 font-black'>Nordic Plan for Women</span> <span class='text-stone-200 text-xl md:text-3xl lg:text-4xl font-bold tracking-normal italic opacity-80'>40+: More Energy, Mobility and Wellness Without Extreme Diets</span>",
+                    subtitle: "A gentle yet effective system designed for women 40+ to optimize metabolism, protect joints, and feel vibrant again without extreme diets required.",
                     bullets: ["Metabolic restoration (40-67)", "Joint-friendly protocols", "Hormonal balance nutrition", "Sustainable approach"],
                     cta: "Start Your Nordic Plan Today"
                 },
+                highlights: [
+                    "✔ Easy routines for daily energy",
+                    "✔ Workouts for real women 40+",
+                    "✔ Practical anti-inflammatory nutrition",
+                    "✔ 3-week Nordic meal plan"
+                ],
                 hormonal: {
                     title: "The Science of Change After 40",
                     subtitle: "Your body isn't working against you—it's just changing. Conventional methods fail because they ignore the unique shift in hormones.",
@@ -324,9 +343,9 @@
                 testimonials: {
                     title: "Stories from the Community",
                     items: [
-                        {name: "Elena", age: "54", text: "I finally found something that doesn't feel like a chore. My knees feel better than they did in my 30s."},
-                        {name: "Margaret", age: "62", text: "The recipes are delicious and simple. I have so much more energy for my grandkids now."},
-                        {name: "Sofia", age: "48", text: "Scientific, professional, and actually works. The focus on hormones changed everything for me."}
+                        {name: "Elena", age: "54", text: "I finally found something that doesn't feel like a chore. My knees feel better than they did in my 30s.", image: "https://images.unsplash.com/photo-1551069613-1904dbdcda11?auto=format&fit=crop&q=80&w=200"},
+                        {name: "Margaret", age: "62", text: "The recipes are delicious and simple. I have so much more energy for my grandkids now.", image: ""},
+                        {name: "Sofia", age: "48", text: "Scientific, professional, and actually works. The focus on hormones changed everything for me.", image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200"}
                     ]
                 },
                 bonus: {
@@ -339,7 +358,7 @@
                 },
                 guarantee: {
                     title: "The 30-Day Nordic Promise",
-                    desc: "Try the Plan Nórdico risk-free. If you don't feel a shift in your energy within 30 days, we'll provide a full refund.",
+                    desc: "Try the Plan Nórdico risk-free. If you don't feel a shift in your energy or mobility within 30 days, we'll provide a full refund.",
                     badge: "30-Day Money Back"
                 },
                 buybox: {
@@ -359,11 +378,17 @@
                 langBtn: "English",
                 hero: {
                     badge: "Vitalidad Respaldada por la Ciencia",
-                    title: "Recupera tu Energía con la Filosofía Nórdica",
-                    subtitle: "Un sistema suave pero efectivo diseñado para mujeres mayores de 40 años para optimizar el metabolismo, proteger las articulaciones y volver a sentirse vibrante—sin dietas extremas.",
-                    bullets: [\"Restauración metabólica (40-67)\", \"Movimiento sin dolor\", \"Equilibrio hormonal\", \"Enfoque sostenible\"],
+                    title: "<span class='text-yellow-400 text-4xl md:text-6xl lg:text-7xl block mb-3 font-black'>Plan Nórdico para Mujeres</span> <span class='text-stone-200 text-xl md:text-3xl lg:text-4xl font-bold tracking-normal italic opacity-80'>+40: Más Energía, Movilidad y Bienestar Sin Dietas Extremas</span>",
+                    subtitle: "Un sistema suave pero efectivo diseñado para mujeres mayores de 40 años para optimizar el metabolismo, proteger las articulaciones y volver a sentirse vibrante sin dietas extremas.",
+                    bullets: ["Restauración metabólica (40-67)", "Movimiento sin dolor", "Equilibrio hormonal", "Enfoque sostenible"],
                     cta: "Inicia tu Plan Nórdico Hoy"
                 },
+                highlights: [
+                    "✔ Rutinas fáciles para energía diaria",
+                    "✔ Entrenamientos pensados para mujeres reales después de 40",
+                    "✔ Alimentación antiinflamatoria práctica",
+                    "✔ Plan de 3 semanas de alimentación Nórdica"
+                ],
                 hormonal: {
                     title: "La Ciencia del Cambio Después de los 40",
                     subtitle: "Tu cuerpo no está trabajando en tu contra—simplemente está cambiando. Los métodos convencionales suelen fallar porque ignoran el cambio hormonal único.",
@@ -395,22 +420,22 @@
                 testimonials: {
                     title: "Historias de la Comunidad Nórdica",
                     items: [
-                        {name: "Elena", age: "54", text: "Finalmente encontré algo que no se siente como una obligación. Mis rodillas se sienten mejor que a mis 30."},
-                        {name: "Margarita", age: "62", text: "Las recetas son deliciosas y sencillas. Ahora tengo mucha más energía para mis nietos."},
-                        {name: "Sofía", age: "48", text: "Científico, profesional y realmente funciona. El enfoque en las hormonas lo cambió todo."}
+                        {name: "Elena", age: "54", text: "Finalmente encontré algo que no se siente como una obligación. Mis rodillas se sienten mejor que a mis 30.", image: "https://images.unsplash.com/photo-1551069613-1904dbdcda11?auto=format&fit=crop&q=80&w=200"},
+                        {name: "Margarita", age: "62", text: "Las recetas son deliciosas y sencillas. Ahora tengo mucha más energía para mis nietos.", image: ""},
+                        {name: "Sofía", age: "48", text: "Científico, profesional y realmente funciona. El enfoque en las hormonas lo cambió todo.", image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200"}
                     ]
                 },
                 bonus: {
                     badge: "Bono Limitado",
                     title: "Protocolo Mañanero Nórdico",
                     desc: "Obtén nuestro ritual exclusivo de 10 minutos para activar el metabolismo y preparar tu día para el éxito.",
-                    items: [\"Ritual metabólico\", \"Tónico antiinflamatorio\", \"Ejercicios mentales\"],
+                    items: ["Ritual metabólico", "Tónico antiinflamatorio", "Ejercicios mentales"],
                     limit: "🔥 Disponible para los primeros 50 compradores de hoy",
                     cta: "Asegurar Mi Bono Ahora"
                 },
                 guarantee: {
                     title: "La Promesa Nórdica de 30 Días",
-                    desc: "Prueba el Plan Nórdico sin riesgos. Si no sientes un cambio en tu energía o movilidad en 30 días, te devolveremos el dinero.",
+                    desc: "Prueba el Plan Nórdico sin riesgos. Si no sientes un cambio en tu energía o movilidad en 30 días, te devolveremos el dinero. Sin preguntas.",
                     badge: "30 Días de Garantía"
                 },
                 buybox: {
@@ -425,6 +450,13 @@
                 }
             }
         };
+
+        const highlightColors = [
+            'text-amber-400',
+            'text-emerald-400',
+            'text-blue-300',
+            'text-red-400'
+        ];
 
         // Countdown logic
         let timeLeft = { days: 1, hours: 23, minutes: 59, seconds: 59 };
@@ -470,15 +502,22 @@
         function render() {
             const t = translations[currentLang];
             
-            // Text nodes
+            // Text nodes - using innerHTML to support span styling
             document.getElementById('top-bar-text').innerText = t.topBar;
             document.getElementById('logo-text').innerText = t.logo;
             document.getElementById('lang-toggle').innerText = t.langBtn;
             document.getElementById('hero-badge').innerText = t.hero.badge;
-            document.getElementById('hero-title').innerText = t.hero.title;
+            document.getElementById('hero-title').innerHTML = t.hero.title;
             document.getElementById('hero-subtitle').innerText = t.hero.subtitle;
             document.getElementById('floating-badge').innerText = currentLang === 'es' ? 'Protocolo Especial Mujer 40+' : 'Special Protocol Women 40+';
             
+            // Render Highlights with Colors and Left Alignment
+            document.getElementById('highlights-container').innerHTML = t.highlights.map((h, i) => `
+                <div class="flex justify-start items-center">
+                    <span class="text-sm md:text-base font-black tracking-tight text-left ${highlightColors[i % highlightColors.length]}">${h}</span>
+                </div>
+            `).join('');
+
             document.getElementById('hormonal-title').innerText = t.hormonal.title;
             document.getElementById('hormonal-subtitle').innerText = t.hormonal.subtitle;
             
@@ -514,9 +553,6 @@
             const ctaLinks = document.querySelectorAll('.cta-link');
             ctaLinks.forEach(link => {
                 link.href = hotmartLinks[currentLang];
-                if (link.tagName === 'A' && !link.innerText) {
-                     // do nothing for empty anchors
-                }
             });
 
             // Dynamic injections
@@ -569,21 +605,28 @@
                 </div>
             `).join('');
 
-            document.getElementById('testimonials-items').innerHTML = t.testimonials.items.map(item => `
-                <div class="bg-emerald-950 p-12 rounded-[60px] border-2 border-emerald-800 flex flex-col shadow-2xl h-full">
+            document.getElementById('testimonials-items').innerHTML = t.testimonials.items.map(item => {
+                const avatarHtml = item.image ? 
+                    `<img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover">` :
+                    `<span class="font-black text-xl text-white">${item.name[0]}</span>`;
+
+                return `
+                <div class="flex-shrink-0 w-[85%] snap-center md:w-full bg-emerald-950 p-12 rounded-[60px] border-2 border-emerald-800 flex flex-col shadow-2xl h-full">
                     <div class="flex gap-1.5 mb-8">
                         ${[1,2,3,4,5].map(() => '<svg class="w-6 h-6 text-amber-400 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>').join('')}
                     </div>
                     <p class="text-2xl italic mb-10 leading-relaxed font-serif opacity-90">"${item.text}"</p>
                     <div class="flex items-center gap-5 mt-auto">
-                        <div class="w-14 h-14 rounded-full bg-red-600 border-4 border-emerald-800 shadow-lg flex items-center justify-center font-black text-xl">${item.name[0]}</div>
+                        <div class="w-14 h-14 rounded-full bg-red-600 border-4 border-emerald-800 shadow-lg flex items-center justify-center overflow-hidden">
+                            ${avatarHtml}
+                        </div>
                         <div>
                             <p class="font-black text-xl">${item.name}</p>
                             <p class="text-sm opacity-60 uppercase tracking-widest font-bold">${item.age} ${currentLang === 'es' ? 'años' : 'years'}</p>
                         </div>
                     </div>
                 </div>
-            `).join('');
+            `}).join('');
 
             document.getElementById('bonus-items').innerHTML = t.bonus.items.map(b => `
                 <li class="flex items-center gap-5">
